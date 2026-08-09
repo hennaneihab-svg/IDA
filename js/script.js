@@ -245,4 +245,122 @@
   const yearEl = document.getElementById('footerYear');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ─── 8. PORTFOLIO LIGHTBOX ──────────────────────────── */
+  const lightbox      = document.getElementById('lightbox');
+  if (lightbox) {
+    const lightboxImg         = lightbox.querySelector('.lightbox-img');
+    const lightboxPlaceholder = lightbox.querySelector('.lightbox-placeholder-view');
+    const lightboxCode        = lightbox.querySelector('.lightbox-placeholder-code');
+    const lightboxTitle       = lightbox.querySelector('.lightbox-title');
+    const lightboxCaption     = lightbox.querySelector('.lightbox-caption');
+    const lightboxCategory    = lightbox.querySelector('.lightbox-category');
+    const lightboxCounter     = lightbox.querySelector('.lightbox-counter');
+    const closeBtn            = lightbox.querySelector('.lightbox-close');
+    const prevBtn             = lightbox.querySelector('.lightbox-prev');
+    const nextBtn             = lightbox.querySelector('.lightbox-next');
+    const backdrop            = lightbox.querySelector('.lightbox-backdrop');
+
+    const galleryCards = Array.from(document.querySelectorAll('.gallery-card'));
+    let currentIndex = 0;
+    let lastFocusedElement = null;
+
+    const updateLightboxContent = (index) => {
+      const card = galleryCards[index];
+      if (!card) return;
+      currentIndex = index;
+
+      const src      = card.dataset.src || '';
+      const title    = card.dataset.title || card.querySelector('.gallery-title')?.textContent || '';
+      const caption  = card.dataset.caption || card.querySelector('.gallery-desc')?.textContent || '';
+      const category = card.dataset.category || card.querySelector('.gallery-badge')?.textContent || '';
+
+      if (lightboxTitle)    lightboxTitle.textContent    = title;
+      if (lightboxCaption)  lightboxCaption.textContent  = caption;
+      if (lightboxCategory) lightboxCategory.textContent = category;
+      if (lightboxCounter)  lightboxCounter.textContent  = `${currentIndex + 1} / ${galleryCards.length}`;
+
+      // Image vs Placeholder logic
+      const isRealImage = src.trim() !== '' && !src.includes('placeholder') && !src.startsWith('[');
+      if (isRealImage && lightboxImg) {
+        lightboxImg.src = src;
+        lightboxImg.alt = title;
+        lightboxImg.style.display = 'block';
+        if (lightboxPlaceholder) lightboxPlaceholder.style.display = 'none';
+      } else {
+        if (lightboxImg) lightboxImg.style.display = 'none';
+        if (lightboxPlaceholder) {
+          lightboxPlaceholder.style.display = 'flex';
+          if (lightboxCode) lightboxCode.textContent = src ? `data-src="${src}"` : `[Image pending: item-${currentIndex + 1}.jpg]`;
+        }
+      }
+    };
+
+    const openLightbox = (index) => {
+      lastFocusedElement = document.activeElement;
+      updateLightboxContent(index);
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeBtn?.focus();
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    };
+
+    const showPrev = () => {
+      const newIndex = (currentIndex - 1 + galleryCards.length) % galleryCards.length;
+      updateLightboxContent(newIndex);
+    };
+
+    const showNext = () => {
+      const newIndex = (currentIndex + 1) % galleryCards.length;
+      updateLightboxContent(newIndex);
+    };
+
+    // Attach click listeners to cards
+    galleryCards.forEach((card, index) => {
+      card.addEventListener('click', () => openLightbox(index));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(index);
+        }
+      });
+    });
+
+    // Control buttons
+    closeBtn?.addEventListener('click', closeLightbox);
+    backdrop?.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+
+      // Simple focus trap
+      if (e.key === 'Tab') {
+        const focusables = [closeBtn, prevBtn, nextBtn].filter(Boolean);
+        const first = focusables[0];
+        const last  = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  }
+
 })();
