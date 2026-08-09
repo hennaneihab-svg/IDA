@@ -437,7 +437,14 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
   padding: 0.4em 0.9em;
   border-radius: 100px;
 }
-.hero-stat-icon { font-size: 0.9rem; }
+.hero-stat-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  background: rgba(0,229,199,0.08);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.hero-stat-icon svg { width: 18px; height: 18px; stroke-width: 1.75; }
 .hero-stat-label { color: var(--text); font-weight: 500; }
 
 /* Canvas wrapper */
@@ -542,10 +549,15 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
 }
 
 .domain-icon {
-  font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px;
+  background: rgba(0,229,199,0.08);
+  border: 1px solid rgba(0,229,199,0.15);
+  border-radius: var(--radius-sm);
   margin-bottom: 1rem;
-  display: block;
+  color: var(--cyan);
 }
+.domain-icon svg { width: 26px; height: 26px; stroke-width: 1.75; }
 .domain-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -577,7 +589,12 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
   gap: 0.75rem;
   align-items: flex-start;
 }
-.domains-note-icon { flex-shrink: 0; color: var(--cyan); font-size: 1rem; margin-top: 0.1rem; }
+.domains-note-icon {
+  flex-shrink: 0; color: var(--cyan); margin-top: 0.1rem;
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+}
+.domains-note-icon svg { width: 18px; height: 18px; stroke-width: 1.75; }
 
 /* ─── 11. SERVICES PIPELINE ──────────────────────────────── */
 #services { background: var(--surface); }
@@ -719,7 +736,6 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
 }
 
 .why-icon {
-  font-size: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -727,7 +743,9 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
   border-radius: var(--radius-sm);
   background: rgba(124,111,255,0.1);
   border: 1px solid rgba(124,111,255,0.2);
+  color: var(--violet);
 }
+.why-icon svg { width: 26px; height: 26px; stroke-width: 1.75; }
 .why-card h3 { font-size: 1.05rem; font-weight: 600; }
 .why-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
@@ -762,9 +780,15 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
   gap: 1rem;
 }
 .portfolio-icon {
-  font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  background: rgba(0,229,199,0.08);
+  border: 1px solid rgba(0,229,199,0.15);
+  border-radius: var(--radius-sm);
   flex-shrink: 0;
+  color: var(--cyan);
 }
+.portfolio-icon svg { width: 24px; height: 24px; stroke-width: 1.75; }
 .portfolio-type {
   font-family: var(--ff-mono);
   font-size: 0.7rem;
@@ -834,14 +858,15 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
 }
 .contact-item:hover { border-color: rgba(0,229,199,0.3); }
 .contact-item-icon {
-  font-size: 1.25rem;
   width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
   background: rgba(0,229,199,0.08);
   border: 1px solid rgba(0,229,199,0.2);
   border-radius: var(--radius-sm);
   flex-shrink: 0;
+  color: var(--cyan);
 }
+.contact-item-icon svg { width: 22px; height: 22px; stroke-width: 1.75; }
 .contact-item-label { font-family: var(--ff-mono); font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.08em; text-transform: uppercase; }
 .contact-item-value { font-size: 0.97rem; font-weight: 500; color: var(--text); }
 .contact-item a { color: inherit; }
