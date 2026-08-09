@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hennaneihab-svg.github.io/IDA/sitemap.xml
