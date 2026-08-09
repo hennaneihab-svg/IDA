@@ -253,8 +253,9 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 .nav-logo {
   height: 40px;
@@ -263,33 +264,40 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
 .nav-tagline {
   font-family: var(--ff-mono);
   font-size: 0.6rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-faint);
   display: none;
+  white-space: nowrap;
 }
-@media (min-width: 900px) { .nav-tagline { display: block; } }
+@media (min-width: 1360px) { .nav-tagline { display: block; } }
 
 .nav-links {
   display: none;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.15rem;
 }
-@media (min-width: 960px) { .nav-links { display: flex; } }
+@media (min-width: 1280px) { .nav-links { display: flex; } }
 
 .nav-link {
   font-family: var(--ff-display);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-muted);
-  padding: 0.5em 0.8em;
+  padding: 0.45em 0.6em;
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
+  white-space: nowrap;
 }
 .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.04); }
 .nav-link.active { color: var(--cyan); }
 
-.nav-cta { margin-left: 0.75rem; }
+.nav-cta {
+  margin-left: 0.5rem;
+  padding: 0.45em 0.85em;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
 
 /* Burger */
 .nav-burger {
@@ -301,7 +309,7 @@ section { padding-block: clamp(5rem, 10vw, 9rem); }
   height: 36px;
   padding: 4px;
 }
-@media (min-width: 960px) { .nav-burger { display: none; } }
+@media (min-width: 1280px) { .nav-burger { display: none; } }
 
 .burger-bar {
   display: block;
@@ -1063,12 +1071,14 @@ footer {
 .lang-selector {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   font-family: var(--ff-mono);
   font-size: 0.78rem;
-  margin-left: 0.75rem;
-  padding-left: 0.75rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
   border-left: 1px solid var(--border);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .lang-btn {
   color: var(--text-muted);
