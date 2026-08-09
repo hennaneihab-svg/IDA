@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IDA — Intelligent Data Analytics : cabinet d'analyse statistique de données du vivant pour chercheurs, enseignants, professionnels et institutions. Biologie, biomédecine, écologie, agronomie, sciences animales." />
+  <meta name="theme-color" content="#070B12" />
+  <meta property="og:title" content="IDA — Intelligent Data Analytics" />
+  <meta property="og:description" content="Vos données du vivant transformées en décisions qui font la différence. Analyse statistique, interprétation, publication scientifique." />
+  <meta property="og:type" content="website" />
+  <title>IDA — Intelligent Data Analytics | Science du vivant · Impact</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     FLOATING WHATSAPP
+════════════════════════════════════════════════════════ -->
+<a
+  href="https://wa.me/213772445412"
+  class="whatsapp-fab"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Nous contacter sur WhatsApp"
+  title="Discuter sur WhatsApp"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════ -->
+<nav id="navbar" class="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="container nav-inner">
+
+    <!-- Brand -->
+    <a href="#" class="nav-brand" aria-label="IDA — Accueil">
+      <img src="assets/logo.png" alt="IDA Logo" class="nav-logo" width="120" height="40" />
+      <span class="nav-tagline">Science du vivant · Impact</span>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="nav-links" role="list">
+      <li><a href="#about"       class="nav-link" data-section="about">À propos</a></li>
+      <li><a href="#domains"     class="nav-link" data-section="domains">Domaines</a></li>
+      <li><a href="#services"    class="nav-link" data-section="services">Services</a></li>
+      <li><a href="#why"         class="nav-link" data-section="why">Pourquoi IDA</a></li>
+      <li><a href="#realisations"class="nav-link" data-section="realisations">Réalisations</a></li>
+      <li><a href="#contact"     class="nav-link" data-section="contact">Contact</a></li>
+      <li>
+        <a href="https://wa.me/213772445412" target="_blank" rel="noopener noreferrer"
+           class="btn btn-primary nav-cta" id="navCta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Nous écrire
+        </a>
+      </li>
+    </ul>
+
+    <!-- Burger -->
+    <button id="burger" class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu" role="dialog" aria-label="Menu mobile" aria-modal="true">
+  <nav>
+    <ul role="list" style="display:flex;flex-direction:column;align-items:center;gap:1.25rem;">
+      <li><a href="#about"        class="mobile-nav-link">À propos</a></li>
+      <li><a href="#domains"      class="mobile-nav-link">Domaines</a></li>
+      <li><a href="#services"     class="mobile-nav-link">Services</a></li>
+      <li><a href="#why"          class="mobile-nav-link">Pourquoi IDA</a></li>
+      <li><a href="#realisations" class="mobile-nav-link">Réalisations</a></li>
+      <li><a href="#contact"      class="mobile-nav-link">Contact</a></li>
+      <li style="margin-top:1rem;">
+        <a href="https://wa.me/213772445412" target="_blank" rel="noopener noreferrer"
+           class="btn btn-whatsapp mobile-nav-link">
+          Nous écrire sur WhatsApp
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════ -->
+<section id="hero" class="hero" aria-label="Introduction">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="container">
+
+    <!-- Content -->
+    <div class="hero-content reveal">
+      <div class="hero-eyebrow" aria-label="Intelligent Data Analytics">
+        <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+        Intelligent Data Analytics
+      </div>
+
+      <h1 class="display-xl hero-title">
+        Vos données.<br>Notre expertise.<br>
+        <span class="text-grad">Des décisions qui font la différence.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Nous transformons vos données en connaissances, vos connaissances en décisions, 
+        et vos décisions en résultats durables — au service de la recherche et des sciences du vivant.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="https://wa.me/213772445412"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-whatsapp"
+           id="heroWaBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Discuter sur WhatsApp
+        </a>
+        <a href="#services" class="btn btn-outline" id="heroServBtn">
+          Découvrir nos services
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Stats bandeau -->
+      <div class="hero-stats" role="list" aria-label="Valeurs clés IDA">
+        <div class="hero-stat-item" role="listitem">
+          <span class="hero-stat-icon" aria-hidden="true">🎯</span>
+          <span class="hero-stat-label">Exactitude</span>
+          <span class="text-faint">des analyses</span>
+        </div>
+        <div class="hero-stat-item" role="listitem">
+          <span class="hero-stat-icon" aria-hidden="true">📊</span>
+          <span class="hero-stat-label">Pertinence</span>
+          <span class="text-faint">des résultats</span>
+        </div>
+        <div class="hero-stat-item" role="listitem">
+          <span class="hero-stat-icon" aria-hidden="true">🔒</span>
+          <span class="hero-stat-label">Confidentialité</span>
+          <span class="text-faint">garantie</span>
+        </div>
+        <div class="hero-stat-item" role="listitem">
+          <span class="hero-stat-icon" aria-hidden="true">🌱</span>
+          <span class="hero-stat-label">Impact</span>
+          <span class="text-faint">mesurable</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canvas visual -->
+    <div class="hero-visual reveal" style="transition-delay:0.2s;" aria-hidden="true">
+      <div class="hero-visual-glow"></div>
+      <canvas id="heroCanvas" class="hero-canvas" aria-label="Animation data vivant IDA"></canvas>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     À PROPOS
+════════════════════════════════════════════════════════ -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Text -->
+      <div class="reveal">
+        <div class="section-eyebrow">À propos</div>
+        <h2 id="about-title" class="display-lg" style="margin-bottom:1.5rem;">
+          L'intelligence des données<br>
+          <span class="text-grad">au service du vivant.</span>
+        </h2>
+        <p>IDA accompagne les chercheurs, enseignants, professionnels et institutions dans l'analyse de données du vivant pour des décisions éclairées, des résultats fiables et une performance durable.</p>
+        <p>Nous analysons les données issues du vivant pour mieux comprendre, décider et agir — de la paillasse du laboratoire jusqu'à la publication scientifique.</p>
+      </div>
+
+      <!-- Pillars -->
+      <div class="about-pillars reveal" style="transition-delay:0.15s;">
+
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <h4>Rigueur scientifique</h4>
+          <p>Des méthodes statistiques validées et adaptées à vos données, pour des résultats reproductibles.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <h4>Confidentialité</h4>
+          <p>Vos données sont protégées et traitées avec la plus haute discrétion, en toutes circonstances.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <h4>Clarté</h4>
+          <p>Des résultats présentés de manière claire, interprétable et directement utilisable.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">04</div>
+          <h4>Suivi</h4>
+          <p>Un accompagnement continu au-delà de la prestation, pour votre succès sur le long terme.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     DOMAINES D'EXPERTISE
+════════════════════════════════════════════════════════ -->
+<section id="domains" aria-labelledby="domains-title" style="background:var(--surface);">
+  <div class="container">
+    <header class="section-header reveal">
+      <div class="section-eyebrow">Domaines d'expertise</div>
+      <h2 id="domains-title" class="display-lg section-title">Sciences du vivant</h2>
+      <p class="section-subtitle">Nous intervenons dans les champs disciplinaires qui touchent au vivant, en apportant une expertise statistique spécialisée et contextualisée.</p>
+    </header>
+
+    <div class="domains-grid">
+
+      <article class="domain-card reveal stagger-1">
+        <span class="domain-icon" aria-hidden="true">🧬</span>
+        <h3 class="domain-title">Biologie</h3>
+        <p class="domain-desc">Biologie moléculaire, cellulaire, génétique, microbiologie, immunologie, biochimie.</p>
+      </article>
+
+      <article class="domain-card reveal stagger-2">
+        <span class="domain-icon" aria-hidden="true">🏥</span>
+        <h3 class="domain-title">Biomédecine</h3>
+        <p class="domain-desc">Recherche médicale, santé humaine, biomarqueurs, pharmacologie, biostatistiques.</p>
+      </article>
+
+      <article class="domain-card reveal stagger-3">
+        <span class="domain-icon" aria-hidden="true">🌿</span>
+        <h3 class="domain-title">Écologie</h3>
+        <p class="domain-desc">Biodiversité, écologie des populations, écosystèmes, conservation, écotoxicologie.</p>
+      </article>
+
+      <article class="domain-card reveal stagger-4">
+        <span class="domain-icon" aria-hidden="true">🌾</span>
+        <h3 class="domain-title">Agronomie</h3>
+        <p class="domain-desc">Biotechnologies végétales, agriculture, amélioration des cultures, gestion des ressources naturelles.</p>
+      </article>
+
+      <article class="domain-card reveal stagger-5">
+        <span class="domain-icon" aria-hidden="true">🐾</span>
+        <h3 class="domain-title">Sciences animales</h3>
+        <p class="domain-desc">Santé animale, génétique, comportement, production animale, bien-être animal.</p>
+      </article>
+
+      <article class="domain-card more reveal stagger-6">
+        <span class="domain-icon" aria-hidden="true">🔬</span>
+        <h3 class="domain-title">Et bien plus…</h3>
+        <p class="domain-desc">Universités, laboratoires, fondations et tout organisme travaillant sur les données du vivant.</p>
+      </article>
+
+    </div>
+
+    <aside class="domains-note reveal" aria-label="Note sur les organismes">
+      <span class="domains-note-icon" aria-hidden="true">ℹ️</span>
+      <p>Nous analysons également les données des <strong>organismes de recherche, universités, laboratoires et fondations du vivant</strong> — dans toute leur diversité disciplinaire.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SERVICES — PIPELINE
+════════════════════════════════════════════════════════ -->
+<section id="services" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <div class="section-eyebrow">Nos prestations</div>
+      <h2 id="services-title" class="display-lg section-title">
+        Le pipeline <span class="text-grad">complet</span>
+      </h2>
+      <p class="section-subtitle">Dix étapes de service, conçues comme une chaîne de traitement de données — de la consultation initiale jusqu'au rapport final.</p>
+    </header>
+
+    <div class="pipeline" role="list">
+      <div class="pipeline-line" aria-hidden="true"></div>
+
+      <!-- 01 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">01</div>
+          <h3>Consultation et orientation statistique</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 02 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">02</div>
+          <h3>Analyse avec ou sans interprétation</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 03 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">03</div>
+          <h3>Interprétation de vos propres analyses</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 04 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">04</div>
+          <h3>Corrections de la partie analyse statistique pour articles et thèses de doctorat</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 05 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">05</div>
+          <h3>Accompagnement après prestation</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 06 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">06</div>
+          <h3>Proposition de tests statistiques en fonction de la structure et la nature des données</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 07 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">07</div>
+          <h3>Saisie de données (questionnaires, par exemple) et livraison au format souhaité</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 08 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">08</div>
+          <h3>Traduction des bases de données en anglais scientifique</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 09 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">09</div>
+          <h3>Amélioration de graphiques pour publication selon les normes exigées</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+      <!-- 10 -->
+      <div class="pipeline-item reveal" role="listitem">
+        <div class="pipeline-card">
+          <div class="pipeline-num">10</div>
+          <h3>Rédaction de rapport statistique au format souhaité</h3>
+        </div>
+        <div class="pipeline-dot" aria-hidden="true"><div class="pipeline-dot-inner"></div></div>
+        <div class="pipeline-empty" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     POURQUOI IDA
+════════════════════════════════════════════════════════ -->
+<section id="why" aria-labelledby="why-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <div class="section-eyebrow">Pourquoi nous choisir</div>
+      <h2 id="why-title" class="display-lg section-title">
+        Ce qui fait la <span class="text-grad">différence IDA</span>
+      </h2>
+      <p class="section-subtitle">Six raisons de nous confier vos données du vivant et vos enjeux scientifiques.</p>
+    </header>
+
+    <div class="why-grid">
+
+      <div class="why-card reveal stagger-1">
+        <div class="why-icon" aria-hidden="true">🎓</div>
+        <h3>Expertise multidisciplinaire</h3>
+        <p>Une équipe qualifiée maîtrisant les méthodes statistiques avancées dans le domaine du vivant.</p>
+      </div>
+
+      <div class="why-card reveal stagger-2">
+        <div class="why-icon" aria-hidden="true">🔐</div>
+        <h3>Confidentialité totale</h3>
+        <p>Vos données sont traitées avec la plus haute confidentialité et sécurité, sans exception.</p>
+      </div>
+
+      <div class="why-card reveal stagger-3">
+        <div class="why-icon" aria-hidden="true">✅</div>
+        <h3>Résultats fiables et pertinents</h3>
+        <p>Des analyses rigoureuses pour des décisions éclairées et un impact réel sur votre recherche.</p>
+      </div>
+
+      <div class="why-card reveal stagger-4">
+        <div class="why-icon" aria-hidden="true">🎨</div>
+        <h3>Solutions sur mesure</h3>
+        <p>Des prestations adaptées à vos objectifs, vos données et vos enjeux — jamais de solution générique.</p>
+      </div>
+
+      <div class="why-card reveal stagger-5">
+        <div class="why-icon" aria-hidden="true">🤝</div>
+        <h3>Accompagnement durable</h3>
+        <p>Nous restons à vos côtés même après la prestation, pour votre réussite sur le long terme.</p>
+      </div>
+
+      <div class="why-card reveal stagger-6">
+        <div class="why-icon" aria-hidden="true">⚡</div>
+        <h3>Réactivité et disponibilité</h3>
+        <p>Réponses rapides, respect des délais, engagement constant et fiabilité reconnue.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     RÉALISATIONS
+════════════════════════════════════════════════════════ -->
+<section id="realisations" aria-labelledby="realisations-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <div class="section-eyebrow">Réalisations</div>
+      <h2 id="realisations-title" class="display-lg section-title">
+        Types de <span class="text-grad">missions représentatives</span>
+      </h2>
+      <p class="section-subtitle">Exemples illustratifs de missions IDA, représentatifs de notre expertise — sans référence à des clients réels.</p>
+    </header>
+
+    <div class="portfolio-grid">
+
+      <article class="portfolio-card reveal stagger-1">
+        <div class="portfolio-header">
+          <span class="portfolio-icon" aria-hidden="true">🧬</span>
+          <div>
+            <div class="portfolio-type">Biologie moléculaire</div>
+            <h3 class="portfolio-title">Analyse différentielle d'expression génique pour article scientifique</h3>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-desc">Sélection des tests statistiques adaptés (ANOVA, tests non-paramétriques), analyse complète, interprétation des résultats et amélioration des figures pour soumission dans une revue internationale à comité de lecture.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">ANOVA</span>
+            <span class="portfolio-tag">Expression génique</span>
+            <span class="portfolio-tag">Publication</span>
+            <span class="portfolio-tag">Service 02 + 09</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal stagger-2">
+        <div class="portfolio-header">
+          <span class="portfolio-icon" aria-hidden="true">🌿</span>
+          <div>
+            <div class="portfolio-type">Écologie des populations</div>
+            <h3 class="portfolio-title">Correction statistique d'une thèse de doctorat en biodiversité</h3>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-desc">Révision complète du chapitre statistique d'une thèse, correction des tests inadaptés, reformulation de l'interprétation et rédaction d'un rapport synthétique conforme aux exigences académiques.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Thèse doctorat</span>
+            <span class="portfolio-tag">Biodiversité</span>
+            <span class="portfolio-tag">Correction</span>
+            <span class="portfolio-tag">Service 04 + 10</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal stagger-3">
+        <div class="portfolio-header">
+          <span class="portfolio-icon" aria-hidden="true">🌾</span>
+          <div>
+            <div class="portfolio-type">Agronomie</div>
+            <h3 class="portfolio-title">Saisie et traitement de données d'essais variétaux en milieu agricole</h3>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-desc">Saisie de données issues d'enquêtes terrain, structuration en base de données, traduction en anglais scientifique et analyse comparative des rendements avec consultation statistique préalable.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Essais variétaux</span>
+            <span class="portfolio-tag">Saisie données</span>
+            <span class="portfolio-tag">Traduction</span>
+            <span class="portfolio-tag">Service 01 + 07 + 08</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card reveal stagger-4">
+        <div class="portfolio-header">
+          <span class="portfolio-icon" aria-hidden="true">🏥</span>
+          <div>
+            <div class="portfolio-type">Biomédecine</div>
+            <h3 class="portfolio-title">Accompagnement biostatistique d'un programme de recherche clinique</h3>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <p class="portfolio-desc">Orientation vers les tests adaptés (régression logistique, survie), interprétation des résultats de l'équipe, suivi post-analyse et production du rapport statistique au format demandé par l'institution.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Recherche clinique</span>
+            <span class="portfolio-tag">Régression</span>
+            <span class="portfolio-tag">Accompagnement</span>
+            <span class="portfolio-tag">Service 03 + 05 + 06</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="portfolio-disclaimer reveal">
+      * Ces exemples sont fournis à titre illustratif. Toute ressemblance avec des projets réels serait fortuite. La confidentialité de nos clients est notre priorité absolue.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════════════ -->
+<section id="contact" style="background:var(--surface);" aria-labelledby="contact-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <div class="section-eyebrow">Nous contacter</div>
+      <h2 id="contact-title" class="display-lg section-title">
+        Vos données ont de la valeur.<br>
+        <span class="text-grad">Nous leur donnons du sens.</span>
+      </h2>
+    </header>
+
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="reveal">
+        <h3 class="contact-info-title">Parlons de votre projet</h3>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <span class="contact-item-icon" aria-hidden="true">📱</span>
+            <div>
+              <div class="contact-item-label">Téléphone / WhatsApp</div>
+              <div class="contact-item-value">
+                <a href="tel:+213772445412">+213 772 445 412</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item-icon" aria-hidden="true">✉️</span>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">
+                <a href="mailto:hsda13000@gmail.com">hsda13000@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://wa.me/213772445412"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp"
+          id="contactWaBtn"
+          style="display:inline-flex;width:auto;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Démarrer une conversation
+        </a>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal" style="transition-delay:0.15s;">
+        <div class="contact-form-card">
+          <h3 class="form-title">Envoyer un message</h3>
+          <form
+            id="contactForm"
+            action="https://formsubmit.co/hsda13000@gmail.com"
+            method="POST"
+            novalidate
+          >
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Nouvelle demande IDA" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true" />
+
+            <div class="form-group">
+              <label for="formName" class="form-label">Nom complet</label>
+              <input type="text" id="formName" name="nom" class="form-input" placeholder="Votre nom et prénom" required autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="formEmail" class="form-label">Adresse email</label>
+              <input type="email" id="formEmail" name="email" class="form-input" placeholder="votre@email.com" required autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="formService" class="form-label">Service souhaité</label>
+              <select id="formService" name="service" class="form-select" required>
+                <option value="" disabled selected>Choisir un service…</option>
+                <option value="01 — Consultation et orientation statistique">01 — Consultation et orientation statistique</option>
+                <option value="02 — Analyse avec ou sans interprétation">02 — Analyse avec ou sans interprétation</option>
+                <option value="03 — Interprétation de vos propres analyses">03 — Interprétation de vos propres analyses</option>
+                <option value="04 — Corrections statistiques (articles / thèses)">04 — Corrections statistiques (articles / thèses)</option>
+                <option value="05 — Accompagnement après prestation">05 — Accompagnement après prestation</option>
+                <option value="06 — Proposition de tests statistiques">06 — Proposition de tests statistiques</option>
+                <option value="07 — Saisie de données et livraison">07 — Saisie de données et livraison</option>
+                <option value="08 — Traduction en anglais scientifique">08 — Traduction en anglais scientifique</option>
+                <option value="09 — Amélioration de graphiques pour publication">09 — Amélioration de graphiques pour publication</option>
+                <option value="10 — Rédaction de rapport statistique">10 — Rédaction de rapport statistique</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="formMessage" class="form-label">Message</label>
+              <textarea id="formMessage" name="message" class="form-textarea" placeholder="Décrivez brièvement votre projet ou vos données…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit" id="formSubmitBtn">
+              Envoyer le message
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="IDA — Intelligent Data Analytics" class="footer-logo" width="100" height="34" />
+        <p class="footer-tagline">Science du vivant · Impact</p>
+        <p class="footer-desc">Cabinet d'analyse statistique de données du vivant — pour chercheurs, enseignants, professionnels et institutions.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Liens rapides">
+        <h4>Navigation</h4>
+        <ul role="list">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#domains">Domaines</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Pourquoi IDA</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-links">
+        <h4>Nos services</h4>
+        <ul role="list">
+          <li><a href="#services">Consultation statistique</a></li>
+          <li><a href="#services">Analyse de données</a></li>
+          <li><a href="#services">Interprétation d'analyses</a></li>
+          <li><a href="#services">Correction d'articles & thèses</a></li>
+          <li><a href="#services">Saisie & traduction données</a></li>
+          <li><a href="#services">Rapport statistique</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul role="list">
+          <li><a href="https://wa.me/213772445412" target="_blank" rel="noopener noreferrer">WhatsApp : +213 772 445 412</a></li>
+          <li><a href="mailto:hsda13000@gmail.com">hsda13000@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="footerYear">2024</span> IDA — Intelligent Data Analytics. Tous droits réservés.</span>
+      <span>Données du vivant · Analyse statistique · Recherche scientifique</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
