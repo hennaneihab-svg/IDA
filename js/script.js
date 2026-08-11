@@ -212,13 +212,69 @@
     animId = requestAnimationFrame(draw);
   }
 
-  /* ─── 5. FORM ENHANCEMENTS ───────────────────────────────── */
+  /* ─── 5. WEB3FORMS CONTACT FORM ───────────────────────────── */
   const form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', (e) => {
-      const btn = form.querySelector('.form-submit');
-      btn.textContent = 'Envoi en cours…';
-      btn.disabled    = true;
+    // Feedback message container
+    const formFeedback = document.createElement('div');
+    formFeedback.className = 'form-feedback';
+    formFeedback.style.marginTop = '1rem';
+    formFeedback.style.padding = '0.75rem 1rem';
+    formFeedback.style.borderRadius = 'var(--radius-sm)';
+    formFeedback.style.fontSize = '0.88rem';
+    formFeedback.style.display = 'none';
+    form.appendChild(formFeedback);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const isEnglish = document.documentElement.lang === 'en';
+      const submitBtn = form.querySelector('.form-submit');
+      const originalBtnHtml = submitBtn.innerHTML;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = isEnglish ? 'Sending message…' : 'Envoi en cours…';
+      formFeedback.style.display = 'none';
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const json = await response.json();
+
+        if (response.status === 200 && json.success) {
+          formFeedback.style.display = 'block';
+          formFeedback.style.background = 'rgba(0, 229, 199, 0.12)';
+          formFeedback.style.border = '1px solid rgba(0, 229, 199, 0.4)';
+          formFeedback.style.color = 'var(--cyan)';
+          formFeedback.textContent = isEnglish
+            ? '✓ Thank you! Your message has been sent successfully. We will get back to you shortly.'
+            : '✓ Merci ! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.';
+          
+          form.reset();
+        } else {
+          throw new Error(json.message || 'Submission error');
+        }
+      } catch (err) {
+        console.error('Web3Forms error:', err);
+        formFeedback.style.display = 'block';
+        formFeedback.style.background = 'rgba(255, 100, 100, 0.12)';
+        formFeedback.style.border = '1px solid rgba(255, 100, 100, 0.4)';
+        formFeedback.style.color = '#ff6b6b';
+        formFeedback.textContent = isEnglish
+          ? 'An error occurred while sending your message. Please try again or contact us via WhatsApp.'
+          : 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter via WhatsApp.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
     });
   }
 

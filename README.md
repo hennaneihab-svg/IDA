@@ -66,7 +66,7 @@ Le site sera disponible à `https://hennaneihab-svg.github.io/IDA/` après quelq
 - **Navbar glassmorphism** : fond flouté qui apparaît au scroll
 - **Menu mobile fullscreen** : avec burger animé
 - **Scroll reveal** : fade + translate avec stagger sur les grilles
-- **Formulaire FormSubmit** : envoi sans backend via `https://formsubmit.co/`
+- **Formulaire Web3Forms** : envoi sans backend via Web3Forms avec notifications email directes
 - **Bouton WhatsApp flottant** : visible en permanence en bas à droite
 - **Responsive mobile-first** : adapté à tous les écrans
 
@@ -78,10 +78,9 @@ Le site sera disponible à `https://hennaneihab-svg.github.io/IDA/` après quelq
 Rechercher `213772445412` dans `index.html` et remplacer par votre numéro (format international sans `+`).
 
 ### Modifier l'email de contact
-Rechercher `hsda13000@gmail.com` dans `index.html` et remplacer dans :
-- L'attribut `action` du formulaire (`formsubmit.co/...`)
-- Le lien `mailto:` dans la section Contact
-- L'input `_subject`
+Rechercher `idaintelligence@gmail.com` dans `index.html` et `en/index-en.html` et remplacer dans :
+- La clé d'accès / service Web3Forms
+- Le lien `mailto:` dans la section Contact et le footer
 
 ### Changer les couleurs
 Modifier les variables CSS dans `:root { }` dans `css/style.css`.
