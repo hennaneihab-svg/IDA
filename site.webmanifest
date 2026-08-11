@@ -1,7 +1,7 @@
 {
   "name": "IDA — Intelligent Data Analytics",
   "short_name": "IDA",
-  "description": "Cabinet d'analyse statistique de données du vivant",
+  "description": "Unité virtuelle d'analyse statistique de données du vivant",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#070B12",
